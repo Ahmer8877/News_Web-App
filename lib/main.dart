@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:news_web/data/provider/news_provider.dart';
 import 'package:news_web/data/provider/settng-provider/theme_provider.dart';
 import 'package:news_web/data/repository/news_repository.dart';
 import 'package:news_web/data/source/News_Api.dart';
 import 'package:news_web/utils/go_routes.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
 
@@ -11,7 +14,11 @@ import 'package:provider/provider.dart';
 final scaffoldMessengerKey=GlobalKey<ScaffoldMessengerState>();
 
 //main func.
-void main(){
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform);
+  usePathUrlStrategy();
   runApp(const newsApp());
 }
 

@@ -6,7 +6,7 @@ import 'package:news_web/utils/show_successMsg.dart';
 class NewsApi {
 
   //Api url with key
-  String baseUrl='https://newsapi.org/v2/everything?q=tesla&from=2026-03-24&sortBy=publishedAt&apiKey=95c636f335c4442a961c164c981f9920';
+  String baseUrl='https://newsapi.org/v2/everything?q=tesla&from=2026-03-25&sortBy=publishedAt&apiKey=df8c82af63354ce6bf60ce3b53409786';
 
   //get data func. with exception handling
 Future<List<NewsModel>> getNewsData()async{
